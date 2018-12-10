@@ -1,0 +1,131 @@
+body {
+    margin: auto;
+    padding: 0;
+}
+
+.projects {
+    padding: 48px 8% 0 8%;
+    display: grid;
+    grid-column-gap: 75px;
+    width: device-width;
+    grid-row-gap: 50px;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+}
+
+.project {
+    position: relative;
+    height: 280px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 1px 30px 1px rgba(0, 0, 0, 0.2), 0 2px 30px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project h2 {
+    text-align: center;
+}
+
+.name {
+    box-shadow: 0 1px 6px #888888;
+    background-color: white;
+    padding: 20px;
+    font-size: 1.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 8px 8px 0 0
+}
+
+.project_description {
+    vertical-align: text-top;
+    font-size: 1.4em;
+    font-family: 'Roboto', sans-serif;
+    padding-right: 32px;
+    padding-left: 8px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    max-height: 140px;
+    color: black;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header {
+    width: device-width;
+    text-align: center;
+    margin-block: 0;
+}
+
+.header_wrapper {
+    text-align: center;
+    width: device-width;
+    padding: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+p, h1, h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.icon {
+    width: 1em;
+    padding-left: 3px;
+    height: 1em;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.icon_helper {
+    height: 100%;
+    vertical-align: top;
+}
+
+.icons_wrapper {
+    right: 0.2em;
+    bottom: 0.2em;
+    position: absolute;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+}
+
+.icons_wrapper p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 1.2em;
+}
+
+.lang {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    left: 0.2em;
+    bottom: 0.2em;
+    font-size: 1.2em;
+    position: absolute;
+}
+
+footer {
+    margin-top: 5vmax;
+    bottom: 0;
+    left: 1em;
+    right: 1em;
+}
+
+footer p {
+    text-align: center;
+}
+
+.classic_a {
+    text-decoration: underline;
+    color: blue;
+}
+
+.colorful_font {
+    color: #222222;
+}
+
