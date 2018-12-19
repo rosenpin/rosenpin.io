@@ -1,0 +1,4 @@
+ResourcesPath: resources
+Port: 8080
+SSLCertificateLocation: /path/to/your/ssl/certificate
+BaseConfigPath: /go/src/gitlab.com/rosenpin/rosenpin.io/configs

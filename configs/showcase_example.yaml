@@ -1,0 +1,12 @@
+ResourcesPath: ../rosenpin.io/resources
+Port: 8080
+Username: alexcrichton
+AuthCode: AUTHCODE
+HTTPRequestTimeout: 10s
+MaxProjects: 12
+IncludeForks: true
+SortMode: stars
+GitPlatform: github
+ProfileURL: http://www.github.com/alexcrichton
+ReloadInterval: 24h
+SSLCertificateLocation: /path/to/your/ssl/certificate
