@@ -1,7 +1,7 @@
 FROM golang
 
 
-RUN go get -u gitlab.com/rosenpin/rosenpin.io
+RUN go get -u gitlab.com/rosenpin/rosenpin.io/...
 WORKDIR /go/src/gitlab.com/rosenpin/rosenpin.io
 RUN go install gitlab.com/rosenpin/rosenpin.io/cmd/rosenpin/
 ENTRYPOINT /go/bin/rosenpin.io -c /go/src/gitlab.com/rosenpin/rosenpin.io/production_config.yml
