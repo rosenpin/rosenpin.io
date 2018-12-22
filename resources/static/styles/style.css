@@ -42,12 +42,14 @@ body {
     padding-left: 8px;
     margin-block-start: 0;
     margin-block-end: 0;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    max-height: 140px;
+    overflow: scroll;
+    height: 140px;
+    scrollbar-width: 1;
     color: black;
+}
+
+.project_description::-webkit-scrollbar {
+    display:none
 }
 
 a {
