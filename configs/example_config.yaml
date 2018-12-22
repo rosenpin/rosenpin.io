@@ -1,0 +1,6 @@
+resources_path: resources
+static_files: /static/
+port: 8080
+ssl_certificate_location: path/to/ssl/certificate/dir
+configs_path: /path/to/configuration/files
+upgrade_http: false
