@@ -1,2 +1,4 @@
 *.yml
 cmd/rosenpin/rosenpin
+cmd/main/main
+cmd/main/rosenpin

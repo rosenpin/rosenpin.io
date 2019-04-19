@@ -1,1 +1,1 @@
-sudo ./rosenpin -c production_config.yml
+sudo ./rosenpin -c configs/production_config.yml
