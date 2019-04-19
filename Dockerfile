@@ -1,16 +1,15 @@
-FROM golang
+FROM alpine
 
-# Copy the source code including configuration
-ADD . /go/src/gitlab.com/rosenpin/rosenpin.io
-# Set the working directory
-WORKDIR /go/src/gitlab.com/rosenpin/rosenpin.io
-# Install deps
-RUN go get ./...
-# Build the binary
-RUN go install gitlab.com/rosenpin/rosenpin.io/cmd/rosenpin/
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+
+RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
+
+ADD bin/rosenpin.app /bin/rosenpin.app
+ADD configs /configs
+ADD resources /resources
 
 # Execute the binary on run
-ENTRYPOINT /go/bin/rosenpin -c /go/src/gitlab.com/rosenpin/rosenpin.io/configs/production_config.yml
+ENTRYPOINT rosenpin.app -c configs/production_config.yml 
 
 # Expose port 80 for host
-EXPOSE 80
+EXPOSE 8080

@@ -10,13 +10,25 @@ import (
 
 	config "gitlab.com/rosenpin/config-manager"
 	showcase "gitlab.com/rosenpin/git-project-showcaser/cmd/showcaser"
+	"gitlab.com/rosenpin/rosenpin.io/handler"
 	"gitlab.com/rosenpin/rosenpin.io/models"
 	yaml "gopkg.in/yaml.v2"
 )
 
 var (
 	appsHandlers = []models.App{
-		{ConfigPath: "showcase.yml", Name: "/", Creator: showcase.NewProjectShowcase()},
+		{
+			ConfigPath: "index.yml",
+			Name:       "Main",
+			Path:       "/",
+			Creator:    handler.NewRosenpinHandlerCreator(),
+		},
+		{
+			ConfigPath: "showcase.yml",
+			Name:       "showcase",
+			Path:       "/showcase",
+			Creator:    showcase.NewProjectShowcase(),
+		},
 	}
 )
 
@@ -79,7 +91,7 @@ func startServers(config *models.Config) {
 	// Load HTTP handlers
 	for _, app := range appsHandlers {
 		handler := app.Creator.CreateHandler(path.Join(config.BaseConfigPath, app.ConfigPath)).ServeHTTP
-		mux.HandleFunc(app.Name, handler)
+		mux.HandleFunc(app.Path, handler)
 	}
 
 	// Handle static files
@@ -95,12 +107,11 @@ func startServers(config *models.Config) {
 	}()
 
 	if config.UpgradeHTTP {
-		if err := http.ListenAndServe(fmt.Sprintf(":%.0f", config.Port), http.HandlerFunc(redirect)); err != nil {
+		if err := http.ListenAndServe(fmt.Sprintf("0.0.0.0:%.0f", config.Port), http.HandlerFunc(redirect)); err != nil {
 			panic(err)
 		}
 	} else {
-
-		if err := http.ListenAndServe(fmt.Sprintf(":%.0f", config.Port), nil); err != nil {
+		if err := http.ListenAndServe(fmt.Sprintf("0.0.0.0:%.0f", config.Port), nil); err != nil {
 			panic(err)
 		}
 	}

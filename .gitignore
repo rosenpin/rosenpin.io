@@ -2,3 +2,5 @@
 cmd/rosenpin/rosenpin
 cmd/main/main
 cmd/main/rosenpin
+*.tar.gz
+resources/website
