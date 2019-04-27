@@ -1,0 +1,4 @@
+#!/bin/bash
+
+go build -o bin/rosenpin.app cmd/main/rosenpin.go
+sudo docker build . -t rosenpin.io && sudo docker save rosenpin.io > rosenpin.tar.gz 
