@@ -1,0 +1,3 @@
+[submodule "resources/websites"]
+	path = resources/website
+	url = git@gitlab.com:rosenpin/websites.git
